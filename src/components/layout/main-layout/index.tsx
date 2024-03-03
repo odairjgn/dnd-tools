@@ -4,6 +4,7 @@ import { MenuItem } from "primereact/menuitem";
 import { TabView, TabPanel } from "primereact/tabview";
 import { Toast } from "primereact/toast";
 import { useRef } from "react";
+import ReactDice, { ReactDiceRef } from "react-dice-complete";
 
 export default function MainLayout() {
   const toast = useRef<Toast>();
@@ -174,15 +175,7 @@ export default function MainLayout() {
         <TabView>
           <TabPanel key={1} header="Uh didi! 1" closable>
             Uh didi
-          </TabPanel>
-          <TabPanel key={2} header="Uh didi! 2" closable>
-            Uh didi
-          </TabPanel>
-          <TabPanel key={3} header="Uh didi! 3" closable>
-            Uh didi
-          </TabPanel>
-          <TabPanel key={4} header="Uh didi! 4" closable>
-            Uh didi
+            <ReactDice numDice={6} rollDone={() => {}} />
           </TabPanel>
         </TabView>
       </div>
