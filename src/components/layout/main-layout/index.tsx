@@ -5,7 +5,6 @@ import { TabView, TabPanel } from "primereact/tabview";
 import { Toast } from "primereact/toast";
 import { useRef } from "react";
 import ReactDice, { ReactDiceRef } from "react-dice-complete";
-import { D20 } from "../../dices/d20";
 
 export default function MainLayout() {
   const toast = useRef<Toast>();
