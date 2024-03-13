@@ -7,6 +7,7 @@ import MainLayout from "./components/layout/main-layout";
 import { ConfirmDialog } from "primereact/confirmdialog";
 import portugues from "./pt-br.json";
 import { locale, addLocale } from "primereact/api";
+import { DiceTray } from "./lib/react-dice/src";
 
 const root = createRoot(document.body);
 root.render(<App />);
@@ -16,6 +17,7 @@ function App() {
   locale("pt-br");
   return (
     <>
+      <DiceTray onResult={(result) => console.log(result)} />
       <MainLayout />
       <ConfirmDialog />{" "}
     </>

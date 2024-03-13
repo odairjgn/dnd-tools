@@ -5,6 +5,7 @@ import { TabView, TabPanel } from "primereact/tabview";
 import { Toast } from "primereact/toast";
 import { useRef } from "react";
 import ReactDice, { ReactDiceRef } from "react-dice-complete";
+import { useRoll } from "../../../lib/react-dice/src";
 
 export default function MainLayout() {
   const toast = useRef<Toast>();
@@ -167,6 +168,8 @@ export default function MainLayout() {
     });
   }
 
+  const { roll, processing } = useRoll();
+
   return (
     <div>
       <Toast ref={toast} />
@@ -175,6 +178,7 @@ export default function MainLayout() {
         <TabView>
           <TabPanel key={1} header="Uh didi! 1" closable>
             Uh didi
+            <button onClick={() => roll("d20")}>Didi</button>
             <ReactDice numDice={6} rollDone={() => {}} />
           </TabPanel>
         </TabView>
